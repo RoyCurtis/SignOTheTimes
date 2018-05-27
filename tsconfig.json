@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "alwaysStrict":                 true,
+    "downlevelIteration":           true,
+    "module":                       "system",
+    "target":                       "es2015",
+    "noImplicitAny":                true,
+    "noImplicitReturns":            true,
+    "noImplicitThis":               true,
+    "noUnusedParameters":           true,
+    "pretty":                       true,
+    "removeComments":               true,
+    "strictFunctionTypes":          true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks":             true,
+    "sourceMap":                    true,
+
+    "outFile": "js/sign.js"
+  },
+
+  "compileOnSave": true,
+
+  "include": [
+    "js/*/*.ts",
+    "js/*.ts"
+  ],
+
+  "exclude": [
+    "node_modules"
+  ]
+}

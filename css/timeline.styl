@@ -1,0 +1,106 @@
+// Do not generate vendor prefixes
+vendors = official
+
+// Timeline offset
+OFFSET = 0s
+
+triangle
+  animation triangle-bg-blink 2s steps(1) 1.5s infinite
+
+  &.north > div
+    animation triangle-blink 2s steps(1) (2/4)*0s infinite
+  &.east > div
+    animation triangle-blink 2s steps(1) (2/4)*1s infinite
+  &.south > div
+    animation triangle-blink 2s steps(1) (2/4)*2s infinite
+  &.west > div
+    animation triangle-blink 2s steps(1) (2/4)*3s infinite
+
+@keyframes triangle-blink
+  0%
+    border-color #068BFF transparent transparent transparent
+  6%
+    border-color #000000 transparent transparent transparent
+
+@keyframes triangle-bg-blink
+  0%
+    background #454545
+  6%
+    background #FF3A70
+  12%
+    background #454545
+
+.o
+  animation o-grow 10s ease-out 0s 1 normal forwards,
+            o-glow 2s steps(1) 0s infinite normal forwards,
+            fade-out 1s linear 12s normal forwards
+
+@keyframes o-grow
+  to
+    font-size 94vmin
+
+@keyframes o-glow
+  0%
+    text-shadow 0 -2px #068BFF
+  6%
+    text-shadow none
+  25%
+    text-shadow 2px 0 #068BFF
+  31%
+    text-shadow none
+  50%
+    text-shadow 0 2px #068BFF
+  56%
+    text-shadow none
+  75%
+    text-shadow -2px 0 #068BFF
+  81%
+    text-shadow none
+
+@keyframes fade-out
+  from
+    opacity 1
+  to
+    opacity 0
+
+OFFSET = 9.75s
+
+.yeah
+  animation yeah-zoom 1s linear OFFSET forwards
+
+@keyframes yeah-zoom
+  0%
+    opacity 1
+    top -80%
+    font-size 750vmin
+  50%
+    opacity 1
+  100%
+    top 0
+    opacity 1
+    font-size 0
+
+OFFSET = 12s
+
+.purple-grid
+  td
+    &.middle
+      animation close-open 5s linear OFFSET forwards
+    &.corner
+      animation close-open-half 5s linear OFFSET forwards reverse
+
+@keyframes close-open
+  from
+    width  100%
+    height 100%
+  to
+    width  0%
+    height 0%
+
+@keyframes close-open-half
+  from
+    width  50%
+    height 50%
+  to
+    width  0%
+    height 0%

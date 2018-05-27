@@ -1,0 +1,106 @@
+/** Sign '☮' The Times. By Roy Curtis, MIT license, 2018 */
+
+@import "timeline.styl"
+
+// CSS reset
+
+*
+  margin     0
+  padding    0
+  box-sizing border-box
+
+body, html
+  background  #000
+  font-family "Times New Roman", serif
+  width       100%
+  height      100%
+  overflow    hidden
+
+// Classes
+
+full-size()
+  width  100%
+  height 100%
+
+full-screen(z = 0)
+  full-size()
+  position absolute
+  left     0
+  top      0
+  z-index  z
+
+// Scenes
+
+triangle
+  background #454545
+  display    flex
+  z-index    100
+
+  > div
+    width  6vmax
+    height 6vmax
+    border-style solid
+    border-width 6vmax 3vmax 0 3vmax
+    border-color #000 transparent transparent transparent
+
+  &.north, &.south
+    position        absolute
+    width           100%
+    height          6vmax
+    left            0
+    justify-content center
+
+  &.west, &.east
+    position absolute
+    width    6vmax
+    height   100%
+    align-items center
+    top      0
+
+  &.north
+    top 0
+
+  &.south
+    bottom 0
+    transform rotate(180deg)
+
+  &.west
+    left 0
+    > div
+      transform rotate(270deg)
+
+  &.east
+    right 0
+    > div
+      transform rotate(90deg)
+
+.o
+  full-screen()
+  color           #5C5C5C
+  display         flex
+  justify-content center
+  align-items     center
+  font-size       12vmin
+
+.yeah
+  full-size()
+  display         flex
+  color           #BF6060
+  position        absolute
+  top             -80%
+  left            5%
+  font-size       0
+  justify-content center
+  align-items     center
+
+.purple-grid
+  full-screen()
+
+  td
+    border 1px solid #6F2878
+    width  0
+    height 0
+
+    &.middle
+      width  100%
+      height 100%
