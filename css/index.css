@@ -1,30 +1,132 @@
 /** Sign '☮' The Times. By Roy Curtis, MIT license, 2018 */
-triangle {
+.triangle-edge {
   animation: triangle-bg-blink 2s steps(1) 1.5s infinite;
 }
-triangle.north > div {
+.triangle-edge.north > triangle {
   animation: triangle-blink 2s steps(1) 0s infinite;
 }
-triangle.east > div {
+.triangle-edge.east > triangle {
   animation: triangle-blink 2s steps(1) 0.5s infinite;
 }
-triangle.south > div {
+.triangle-edge.south > triangle {
   animation: triangle-blink 2s steps(1) 1s infinite;
 }
-triangle.west > div {
+.triangle-edge.west > triangle {
   animation: triangle-blink 2s steps(1) 1.5s infinite;
 }
 .o {
-  animation: o-grow 10s ease-out 0s 1 normal forwards, o-glow 2s steps(1) 0s infinite normal forwards, fade-out 1s linear 12s normal forwards;
+  animation: o-grow 9.5s ease-out 0s 1 normal forwards, o-glow 2s steps(1) 0s infinite normal forwards, appear-disappear 1s linear 12s reverse forwards;
 }
 .yeah {
   animation: yeah-zoom 1s linear 9.75s forwards;
 }
 .purple-grid td.middle {
-  animation: close-open 5s linear 12s forwards;
+  animation: close-open 5.75s linear 12s forwards;
 }
 .purple-grid td.corner {
-  animation: close-open-half 5s linear 12s forwards reverse;
+  animation: close-open-half 5.75s linear 12s forwards reverse;
+}
+.triangle-zoom triangle {
+  animation: triangle-zoom 5s ease-out 18.75s forwards;
+}
+.heart-zoom div {
+  animation: heart-zoom 5.2s ease-out 23.75s forwards;
+}
+.disease-scene {
+  animation: appear-disappear 0s 28.95s forwards;
+}
+.disease-scene span:nth-child(1) {
+  animation: lyric-zoom 0.6s ease-out 28.65s forwards;
+}
+.disease-scene span:nth-child(2) {
+  animation: lyric-zoom 0.6s ease-out 28.95s forwards;
+}
+.disease-scene span:nth-child(3) {
+  animation: lyric-zoom 0.6s ease-out 29.25s forwards;
+}
+.disease-scene span:nth-child(4) {
+  animation: lyric-zoom 0.6s ease-out 29.55s forwards;
+}
+.disease-scene span:nth-child(5) {
+  animation: lyric-zoom 0.6s ease-out 29.849999999999998s forwards;
+}
+.disease-scene span:nth-child(6) {
+  animation: lyric-zoom 0.6s ease-out 30.15s forwards;
+}
+.disease-scene span:nth-child(7) {
+  animation: lyric-zoom 0.6s ease-out 30.45s forwards;
+}
+.disease-scene span:nth-child(8) {
+  animation: lyric-zoom 0.6s ease-out 30.75s forwards;
+}
+.disease-scene span:nth-child(9) {
+  animation: lyric-zoom 0.6s ease-out 31.049999999999997s forwards;
+}
+.disease-scene span:nth-child(10) {
+  animation: lyric-zoom 0.6s ease-out 31.349999999999998s forwards;
+}
+.disease-scene span:nth-child(11) {
+  animation: lyric-zoom 0.6s ease-out 31.65s forwards;
+}
+.disease-scene span:nth-child(12) {
+  animation: lyric-zoom 0.6s ease-out 31.95s forwards;
+}
+.disease-scene span:nth-child(13) {
+  animation: lyric-zoom 0.6s ease-out 32.25s forwards;
+}
+.disease-scene span:nth-child(14) {
+  animation: lyric-zoom 0.6s ease-out 32.55s forwards;
+}
+.disease-scene span:nth-child(15) {
+  animation: lyric-zoom 0.6s ease-out 32.85s forwards;
+}
+.disease-scene span:nth-child(16) {
+  animation: lyric-zoom 0.6s ease-out 33.15s forwards;
+}
+.disease-scene span:nth-child(17) {
+  animation: lyric-zoom 0.6s ease-out 33.45s forwards;
+}
+.disease-scene span:nth-child(18) {
+  animation: lyric-zoom 0.6s ease-out 33.75s forwards;
+}
+.disease-scene span:nth-child(19) {
+  animation: lyric-zoom 0.6s ease-out 34.05s forwards;
+}
+.disease-scene span:nth-child(20) {
+  animation: lyric-zoom 0.6s ease-out 34.35s forwards;
+}
+.disease-scene span:nth-child(21) {
+  animation: lyric-zoom 0.6s ease-out 34.65s forwards;
+}
+.disease-scene span:nth-child(22) {
+  animation: lyric-zoom 0.6s ease-out 34.95s forwards;
+}
+.disease-scene span:nth-child(23) {
+  animation: lyric-zoom 0.6s ease-out 35.25s forwards;
+}
+.disease-scene span:nth-child(24) {
+  animation: lyric-zoom 0.6s ease-out 35.55s forwards;
+}
+.disease-scene span:nth-child(25) {
+  animation: lyric-zoom 0.6s ease-out 35.85s forwards;
+}
+.disease-scene span:nth-child(26) {
+  animation: lyric-zoom 0.6s ease-out 36.15s forwards;
+}
+.disease-scene span:nth-child(27) {
+  animation: lyric-zoom 0.6s ease-out 36.45s forwards;
+}
+.disease-scene span:nth-child(28) {
+  animation: lyric-zoom 0.6s ease-out 36.75s forwards;
+}
+.disease-scene span:nth-child(29) {
+  animation: lyric-zoom 0.6s ease-out 37.05s forwards;
+}
+.disease-scene span:nth-child(30) {
+  animation: lyric-zoom 0.6s ease-out 37.35s forwards;
+}
+.disease-scene span:nth-child(31) {
+  animation: lyric-zoom 0.6s ease-out 37.65s forwards;
 }
 @keyframes triangle-blink {
   0% {
@@ -76,12 +178,12 @@ triangle.west > div {
     text-shadow: none;
   }
 }
-@keyframes fade-out {
+@keyframes appear-disappear {
   from {
-    opacity: 1;
+    opacity: 0;
   }
   to {
-    opacity: 0;
+    opacity: 1;
   }
 }
 @keyframes yeah-zoom {
@@ -105,8 +207,8 @@ triangle.west > div {
     height: 100%;
   }
   to {
-    width: 0%;
-    height: 0%;
+    width: 0;
+    height: 0;
   }
 }
 @keyframes close-open-half {
@@ -115,8 +217,32 @@ triangle.west > div {
     height: 50%;
   }
   to {
-    width: 0%;
-    height: 0%;
+    width: 0;
+    height: 0;
+  }
+}
+@keyframes triangle-zoom {
+  from {
+    transform: scale(1.5) rotate(100deg);
+  }
+  to {
+    transform: scale(0) rotate(180deg);
+  }
+}
+@keyframes heart-zoom {
+  from {
+    transform: scale(1) rotate(-45deg);
+  }
+  to {
+    transform: scale(0) rotate(0deg);
+  }
+}
+@keyframes lyric-zoom {
+  from {
+    font-size: 40vmin;
+  }
+  to {
+    font-size: 0;
   }
 }
 * {
@@ -132,51 +258,51 @@ html {
   height: 100%;
   overflow: hidden;
 }
-triangle {
+.triangle-edge {
   background: #454545;
   display: flex;
   z-index: 100;
 }
-triangle > div {
-  width: 6vmax;
-  height: 6vmax;
+.triangle-edge > triangle {
   border-style: solid;
   border-width: 6vmax 3vmax 0 3vmax;
   border-color: #000 transparent transparent transparent;
+  width: 6vmax;
+  height: 6vmax;
 }
-triangle.north,
-triangle.south {
+.triangle-edge.north,
+.triangle-edge.south {
   position: absolute;
   width: 100%;
   height: 6vmax;
   left: 0;
   justify-content: center;
 }
-triangle.west,
-triangle.east {
+.triangle-edge.west,
+.triangle-edge.east {
   position: absolute;
   width: 6vmax;
   height: 100%;
   align-items: center;
   top: 0;
 }
-triangle.north {
+.triangle-edge.north {
   top: 0;
 }
-triangle.south {
+.triangle-edge.south {
   bottom: 0;
   transform: rotate(180deg);
 }
-triangle.west {
+.triangle-edge.west {
   left: 0;
 }
-triangle.west > div {
+.triangle-edge.west > triangle {
   transform: rotate(270deg);
 }
-triangle.east {
+.triangle-edge.east {
   right: 0;
 }
-triangle.east > div {
+.triangle-edge.east > triangle {
   transform: rotate(90deg);
 }
 .o {
@@ -186,10 +312,10 @@ triangle.east > div {
   left: 0;
   top: 0;
   z-index: 0;
-  color: #5c5c5c;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #5c5c5c;
   font-size: 12vmin;
 }
 .yeah {
@@ -220,5 +346,92 @@ triangle.east > div {
 .purple-grid td.middle {
   width: 100%;
   height: 100%;
+}
+.triangle-zoom {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.triangle-zoom triangle {
+  border-style: solid;
+  border-width: 150vmax 75vmax 0 75vmax;
+  border-color: #fbc37c transparent transparent transparent;
+  width: 150vmax;
+  height: 150vmax;
+  transform: scale(0);
+}
+.heart-zoom {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.heart-zoom div {
+  transform: scale(0);
+}
+.heart-zoom heart {
+  background-color: #ff2090;
+  display: block;
+  transform: rotate(-45deg);
+  width: 100vmax;
+  height: 100vmax;
+}
+.heart-zoom heart:before,
+.heart-zoom heart:after {
+  content: "";
+  background-color: #ff2090;
+  border-radius: 50%;
+  position: absolute;
+  width: 100vmax;
+  height: 100vmax;
+}
+.heart-zoom heart:before {
+  top: -50vmax;
+  left: 0;
+}
+.heart-zoom heart:after {
+  top: 0;
+  left: 50vmax;
+}
+.disease-scene {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: #fff;
+  opacity: 0;
+}
+.disease-scene .peach-square {
+  background: #ffba8b;
+  width: 2vmax;
+  height: 2vmax;
+}
+.disease-scene span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 0;
 }
 /*# sourceMappingURL=css/index.css.map */

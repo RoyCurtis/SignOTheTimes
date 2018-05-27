@@ -29,19 +29,50 @@ full-screen(z = 0)
   top      0
   z-index  z
 
+center-content()
+  align-items     center
+  justify-content center
+
+triangle(width, height, color)
+  border-style solid
+  border-width height (width / 2) 0 (width / 2)
+  border-color color transparent transparent transparent
+  width        width
+  height       height
+
+heart(width, height, color)
+  background-color color
+  display          block
+  transform        rotate(-45deg)
+  width            width
+  height           height
+
+  &:before,
+  &:after
+    content          ""
+    background-color color
+    border-radius    50%
+    position         absolute
+    width            width
+    height           height
+
+  &:before
+    top  -(width / 2)
+    left 0
+
+  &:after
+    top  0
+    left (width / 2)
+
 // Scenes
 
-triangle
+.triangle-edge
   background #454545
   display    flex
   z-index    100
 
-  > div
-    width  6vmax
-    height 6vmax
-    border-style solid
-    border-width 6vmax 3vmax 0 3vmax
-    border-color #000 transparent transparent transparent
+  > triangle
+    triangle(6vmax, 6vmax, #000)
 
   &.north, &.south
     position        absolute
@@ -66,21 +97,20 @@ triangle
 
   &.west
     left 0
-    > div
+    > triangle
       transform rotate(270deg)
 
   &.east
     right 0
-    > div
+    > triangle
       transform rotate(90deg)
 
 .o
   full-screen()
-  color           #5C5C5C
-  display         flex
-  justify-content center
-  align-items     center
-  font-size       12vmin
+  center-content()
+  display   flex
+  color     #5C5C5C
+  font-size 12vmin
 
 .yeah
   full-size()
@@ -104,3 +134,41 @@ triangle
     &.middle
       width  100%
       height 100%
+
+.triangle-zoom
+  full-screen()
+  center-content()
+  display flex
+
+  triangle
+    triangle(150vmax, 150vmax, #FBC37C)
+    transform scale(0)
+
+.heart-zoom
+  full-screen()
+  center-content()
+  display flex
+
+  div
+    transform scale(0)
+
+  heart
+    heart(100vmax, 100vmax, #FF2090)
+
+.disease-scene
+  full-screen()
+  center-content()
+  display    flex
+  background white
+  opacity    0
+
+  .peach-square
+    background #FFBA8B
+    width  2vmax
+    height 2vmax
+
+  span
+    full-screen()
+    center-content()
+    display   flex
+    font-size 0

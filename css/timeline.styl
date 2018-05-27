@@ -4,16 +4,16 @@ vendors = official
 // Timeline offset
 OFFSET = 0s
 
-triangle
+.triangle-edge
   animation triangle-bg-blink 2s steps(1) 1.5s infinite
 
-  &.north > div
+  &.north > triangle
     animation triangle-blink 2s steps(1) (2/4)*0s infinite
-  &.east > div
+  &.east > triangle
     animation triangle-blink 2s steps(1) (2/4)*1s infinite
-  &.south > div
+  &.south > triangle
     animation triangle-blink 2s steps(1) (2/4)*2s infinite
-  &.west > div
+  &.west > triangle
     animation triangle-blink 2s steps(1) (2/4)*3s infinite
 
 @keyframes triangle-blink
@@ -31,9 +31,9 @@ triangle
     background #454545
 
 .o
-  animation o-grow 10s ease-out 0s 1 normal forwards,
+  animation o-grow 9.5s ease-out 0s 1 normal forwards,
             o-glow 2s steps(1) 0s infinite normal forwards,
-            fade-out 1s linear 12s normal forwards
+            appear-disappear 1s linear 12s reverse forwards
 
 @keyframes o-grow
   to
@@ -57,11 +57,11 @@ triangle
   81%
     text-shadow none
 
-@keyframes fade-out
+@keyframes appear-disappear
   from
-    opacity 1
-  to
     opacity 0
+  to
+    opacity 1
 
 OFFSET = 9.75s
 
@@ -85,22 +85,59 @@ OFFSET = 12s
 .purple-grid
   td
     &.middle
-      animation close-open 5s linear OFFSET forwards
+      animation close-open 5.75s linear OFFSET forwards
     &.corner
-      animation close-open-half 5s linear OFFSET forwards reverse
+      animation close-open-half 5.75s linear OFFSET forwards reverse
 
 @keyframes close-open
   from
     width  100%
     height 100%
   to
-    width  0%
-    height 0%
+    width  0
+    height 0
 
 @keyframes close-open-half
   from
     width  50%
     height 50%
   to
-    width  0%
-    height 0%
+    width  0
+    height 0
+
+OFFSET += 6.75s
+
+.triangle-zoom triangle
+  animation triangle-zoom 5s ease-out OFFSET forwards
+
+OFFSET += 5s
+
+.heart-zoom div
+  animation heart-zoom 5.2s ease-out OFFSET forwards
+
+@keyframes triangle-zoom
+  from
+    transform scale(1.5) rotate(100deg)
+  to
+    transform scale(0) rotate(180deg)
+
+@keyframes heart-zoom
+  from
+    transform scale(1) rotate(-45deg)
+  to
+    transform scale(0) rotate(-0deg)
+
+OFFSET += 5.2s
+
+.disease-scene
+  animation appear-disappear 0s OFFSET forwards
+
+  for lyric in (1..31)
+    span:nth-child({lyric})
+      animation lyric-zoom 0.6s ease-out ((0.3s * lyric) - 0.6s + OFFSET) forwards
+
+@keyframes lyric-zoom
+  from
+    font-size 40vmin
+  to
+    font-size 0
